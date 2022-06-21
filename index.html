@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- For the favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package/favicon.ico">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <!-- For warning icon  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- For Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
+    <!-- My stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Decider Dice</title>
+</head>
+<body>
+    <div class="container" id="details">
+        <h1>Decider Dice</h1>
+        <p>The loser pays for food!</p>
+
+        <form name="playerForm" id="playerForm" action="#" method="get">
+            <div class="playerInput for-margin">
+                <div class="align-start">
+                    <label for="player1">Enter Name of Player 1</label>
+                    <input type="text" name="player" placeholder="Player 1" autofocus="true" required pattern="[A-Za-z0-9]{1,15}">
+                    <div class="error-div">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <p class="error-para"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playerInput for-margin">
+                <div class="align-start">
+                    <label for="player1">Enter Name of Player 2</label>
+                    <input type="text" name="player" placeholder="Player 2" required pattern="[A-Za-z0-9]{1,15}">
+                    <div class="error-div">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <p class="error-para"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <!-- To create a submit button, you use <input> or <button> element with the type submit -->
+                    <!-- When you submit the form, the submit event is fired before the request is sent to the server. This gives you a chance to
+                    validate the form data. If the form data is invalid, you can stop submitting the form. -->
+                <button type="submit" class="btn" id="proceed">Proceed</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

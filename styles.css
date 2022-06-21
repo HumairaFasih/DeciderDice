@@ -1,0 +1,234 @@
+/* Alternate way to center the entire content of body vertically,
+does not require putting everything in body into a container */
+
+/* html, body {
+  height: 100%;
+} 
+
+html {
+  display: table;
+  margin: auto;
+}  
+
+body {
+  display: table-cell;
+  vertical-align: middle; 
+*/
+
+@font-face {
+  font-family: "BrandonGrotesqueBold";
+  src: url(font/brandon-grotesque-bold.otf)
+}
+@font-face {
+  font-family: "BrandonGrotesqueLight";
+  src: url(font/brandon-grotesque-light.otf)
+}
+
+body {
+  background-color: #4c4647;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  font-family: "BrandonGrotesqueLight", sans-serif;
+}
+
+.container {
+  display: flex;
+
+  /* When flex-direction is column, 
+  align items aligns horizontally,
+  justify-content aligns vertically */
+
+  justify-content: center;
+  flex-direction: column;
+  width: inherit;
+  height: inherit;
+}
+
+h1, h2, p {
+
+  text-align: center;
+  color: #59F7AA;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Merriweather", serif;
+  letter-spacing: 8px;
+}
+
+h2, label {
+  font-size: 1.5rem;
+  font-family: inherit;
+  letter-spacing: 3px;
+}
+
+label {
+  color: #59F7AA;
+  margin-bottom: 1%;
+}
+
+/* Called the descendant selector, selecting all child label elements wherever the parent has class playerInput
+.playerInput label {
+  text-align: left;
+  color: #59F7AA;
+} */
+
+p, .error-msg{
+  font-size: 1.2rem;
+  font-family: "BrandonGrotesqueLight", sans-serif;
+  letter-spacing: 3px;
+}
+
+.playerInput {
+  display: flex;
+  justify-content: center;
+}
+
+.for-margin {
+  margin-top: 3%;
+}
+
+.align-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+input[type=text] {
+  height: 1vh;
+  width: 60vw;
+  padding: 2%;
+  font-size: 1.2rem;
+  color: #9C1605; 
+  border-radius: 4px;
+  border-color: #443E3F;
+  outline-color: #675E60;
+}
+
+input[type=text]:valid {
+  border-width: 2px;
+  border-color: #59F7AA;
+  border-style: calc(100% / 30px);
+}
+
+/* need to use input.style-invalid-input (not just .style-invalid-input) to ensure this selector takes precedence over default input styling */
+/* The invalid pseudo class cannot be used either since it will style input upon loading the page */
+input.style-invalid-input {
+  border-width: 2px;
+  border-color: #9C1605;
+  border-style: solid;
+}
+
+.error-div {
+  display: none;
+}
+
+.show-error {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+div.show-error > i, p.error-para {
+  margin-right: 1%;
+  color: beige;
+  letter-spacing: 2px;
+}
+
+.dice-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.die {
+  display: flex;
+  flex-direction: column;
+  margin: 0 3%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+}
+
+.btn {
+  background: #9C1605;
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  color: #59F7AA;
+  font-family: "BrandonGrotesqueLight", sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.5rem; 
+  padding: 2vh 3vw;
+  border: solid #36302f 2px;
+  text-decoration: none;
+}
+
+.btn:active {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.hide-result {
+  display: none;
+}
+
+.style-result {
+  
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+  font-size: 2.5rem;
+  background-image: -webkit-linear-gradient(92deg, #59F7AA, #FCF4DC);
+  background-image: -moz-linear-gradient(92deg, #59F7AA, #FCF4DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  /* fallback bg for text */
+  background-color: #59F7AA;
+  font-family: inherit;
+  letter-spacing: 5px;
+}
+
+/* span.result-msg {
+  margin-right: 1%;
+} */
+
+/* i.hide {
+  visibility: hidden;
+} */
+
+@media(max-width: 425px) {
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 6px;
+  }
+  h2, .playerInput label {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+
