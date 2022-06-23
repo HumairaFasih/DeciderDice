@@ -1,34 +1,40 @@
 
-// var pageType = $(".container").attr("id")
+var pageType = $(".container").attr("id")
+const resultElement = document.createElement('span')
 
-// Disable native form validation
-document.forms["playerForm"].setAttribute("novalidate", true)
+window.onload = () => {
+    if (pageType == "details") {
 
-// Add custom validation as soon as user leaves focus from input field
-document.addEventListener('blur', function (event) {
-    initiateValidation(event.target)
-}, true)
+        // Disable native form validation
+        document.forms["playerForm"].setAttribute("novalidate", true)
 
-// Submit form after validation of input
-var form = $("form[name=playerForm]")
-form.on("submit", function (event) {
-        event.preventDefault()
-        debugger
-        checkFormValidity(form)
-    // var isValid =
-        // if (isValid) {this.submit()}
-    })
+        // Add custom validation as soon as user leaves focus from input field
+        document.addEventListener('blur', function (event) {
+            initiateValidation(event.target)
+        }, true)
 
-$(document).on('keydown', function (event) {
-    if (event.target.nodeName == 'INPUT' && event.keyCode == 13) {
-        initiateValidation(event.target)
+        // Submit form after validation of input
+        // var form = $("form[name=playerForm]")
+        $("form[name=playerForm]").on("submit", function (event) {
+            event.preventDefault()
+            var isValid = checkFormValidity()
+            if (isValid) { this.submit() }
+        })
+
+        $(document).on('keydown', function (event) {
+            if (event.target.nodeName == 'INPUT' && event.keyCode == 13) {
+                initiateValidation(event.target)
+            }
+        })
     }
-})
 
-$("#roll-btn").on('click', () => {
-    var urlObject = new URLSearchParams(window.location.search)
-    playGame(urlObject)
-})
+    else if (pageType == "game") {
+        $("#roll-btn").on('click', () => {
+            var urlObject = new URLSearchParams(window.location.search)
+            playGame(urlObject)
+        })
+    }
+}
 
 function initiateValidation(target) {
     
@@ -113,17 +119,15 @@ function checkFormValidity(form) {
 
     // Submit form if no errors found
     if (errorCounter == 0) {
-        form.submit()
-        // return true
+        // form.submit()
+        return true
     }
 
-    // return null
+    return null
 }
 
 function playGame(urlObject) {
     
-    debugger
-    var resultElement = document.createElement('span')
     var trophyIconHTML = '<i class="fa fa-trophy" aria-hidden="true"></i>';
     var resultString;
     var roll1 = Math.ceil(Math.random() * 6)
