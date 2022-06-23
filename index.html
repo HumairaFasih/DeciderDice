@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto&display=swap">
-    <!-- My stylesheet -->
+    <!-- CSS stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
     <title>Decider Dice</title>
@@ -24,7 +24,7 @@
         <h1>Decider Dice</h1>
         <p>The loser pays for food!</p>
 
-        <form name="playerForm" id="playerForm" action="#" method="get">
+        <form name="playerForm" id="playerForm" action="./dice.html" method="get">
             <div class="playerInput for-margin">
                 <div class="align-start">
                     <label for="player1">Enter Name of Player 1</label>
@@ -38,7 +38,7 @@
 
             <div class="playerInput for-margin">
                 <div class="align-start">
-                    <label for="player1">Enter Name of Player 2</label>
+                    <label for="player2">Enter Name of Player 2</label>
                     <input type="text" name="player" placeholder="Player 2" required pattern="[A-Za-z0-9]{1,15}">
                     <div class="error-div">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
@@ -48,9 +48,10 @@
             </div>
 
             <div class="btn-container">
-                <!-- To create a submit button, you use <input> or <button> element with the type submit -->
-                    <!-- When you submit the form, the submit event is fired before the request is sent to the server. This gives you a chance to
-                    validate the form data. If the form data is invalid, you can stop submitting the form. -->
+                <!-- To create a submit button, use <input> or <button> element with the type submit -->
+                <!-- When form is submitted, the submit event is fired before the request is sent to the server. 
+                    This gives a chance to validate the form data. 
+                    If the form data is invalid, one can stop submission of the form. -->
                 <button type="submit" class="btn" id="proceed">Proceed</button>
             </div>
         </form>

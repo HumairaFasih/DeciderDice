@@ -68,7 +68,8 @@ label {
   margin-bottom: 1%;
 }
 
-/* Called the descendant selector, selecting all child label elements wherever the parent has class playerInput
+/* Called the descendant selector.
+This example selects all child label elements wherever the parent has class playerInput
 .playerInput label {
   text-align: left;
   color: #59F7AA;
@@ -112,8 +113,9 @@ input[type=text]:valid {
   border-style: calc(100% / 30px);
 }
 
-/* need to use input.style-invalid-input (not just .style-invalid-input) to ensure this selector takes precedence over default input styling */
-/* The invalid pseudo class cannot be used either since it will style input upon loading the page */
+/* Use input.style-invalid-input (not just .style-invalid-input) to ensure this selector takes precedence over default input styling
+The invalid pseudo class cannot be used either since it will style input upon loading the page 
+(Because form fields are empty when page loads */
 input.style-invalid-input {
   border-width: 2px;
   border-color: #9C1605;
@@ -182,15 +184,8 @@ img {
   transform: scale(1.1);
 }
 
-.hide-result {
-  display: none;
-}
-
 .style-result {
   
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   text-align: center;
   font-size: 2.5rem;
   background-image: -webkit-linear-gradient(92deg, #59F7AA, #FCF4DC);
@@ -205,14 +200,6 @@ img {
   font-family: inherit;
   letter-spacing: 5px;
 }
-
-/* span.result-msg {
-  margin-right: 1%;
-} */
-
-/* i.hide {
-  visibility: hidden;
-} */
 
 @media(max-width: 425px) {
   h1 {
