@@ -210,8 +210,8 @@ img {
     font-size: 1rem;
     letter-spacing: 3px;
   }
-  p {
-    font-size: 0.8rem;
+  p, span.style-result{
+    font-size: 1rem;
   }
   .btn {
     font-size: 1rem;
