@@ -65,7 +65,7 @@ h2, label {
 
 label {
   color: #59F7AA;
-  margin-bottom: 1%;
+  margin-bottom: 1.5%;
 }
 
 /* Called the descendant selector.
@@ -97,8 +97,8 @@ p, .error-msg{
 }
 
 input[type=text] {
-  height: 1vh;
-  width: 60vw;
+  height: 2vh;
+  width: 65vw;
   padding: 2%;
   font-size: 1.2rem;
   color: #9C1605; 
@@ -131,13 +131,13 @@ input.style-invalid-input {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0;
-  font-size: 20px;
 }
 
 div.show-error > i, p.error-para {
   margin-right: 1%;
   color: beige;
   letter-spacing: 2px;
+  font-size: 1.2rem;
 }
 
 .dice-container {
@@ -203,18 +203,37 @@ img {
 
 @media(max-width: 425px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 6px;
   }
   h2, .playerInput label {
-    font-size: 1rem;
+    font-size: 1.2rem;
     letter-spacing: 3px;
   }
-  p, span.style-result{
+  p {
     font-size: 1rem;
   }
+
   .btn {
+    font-size: 1.5rem;
+    padding: 2vh 4.5vw;
+  }
+  .btn-container {
+    margin: 4% 0;
+  }
+
+  input[type=text] {
+    height: 3vh;
+    width: 75vw;
     font-size: 1rem;
+  }
+
+  .style-result {
+    font-size: 1.5rem;
+  }
+
+  div.show-error > i, p.error-para {
+    font-size: 0.8rem;
   }
 }
 
