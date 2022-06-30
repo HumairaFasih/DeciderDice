@@ -1,5 +1,5 @@
 
-var pageType = $(".container").attr("id")
+const pageType = $(".container").attr("id")
 const resultElement = document.createElement('span')
 
 window.onload = () => {
@@ -18,7 +18,7 @@ window.onload = () => {
         $("form[name=playerForm]").on("submit", function (event) {
             event.preventDefault()
             var isValid = checkFormValidity()
-            if (isValid) { this.submit() }
+            if (isValid)  this.submit() 
         })
 
         $(document).on('keydown', function (event) {
@@ -38,13 +38,13 @@ window.onload = () => {
 
 function initiateValidation(target) {
     
-    var errorElement = target.nextElementSibling
+    let errorElement = target.nextElementSibling
 
     // Take required action when blur event fires on input field 
     if (target.nodeName == "INPUT") {
 
-        var validityState = target.validity
-        var errorMsg = checkInputValidity(validityState)
+        let validityState = target.validity
+        let errorMsg = checkInputValidity(validityState)
 
         // Invalid input
         if (errorMsg) {
@@ -98,7 +98,7 @@ function displayError(error, target, errorElement) {
 function removeError(errorElement) {
 
     // Remove the error fields
-    var errorClasses = errorElement.classList
+    let errorClasses = errorElement.classList
     errorClasses.remove("show-error")
     errorClasses.add("error-msg")
 }
@@ -106,15 +106,15 @@ function removeError(errorElement) {
 function checkFormValidity(form) {
 
     // Get all form input fields in an array 
-    var inputFields = Array.from(document.querySelectorAll("#playerForm input"))
+    let inputFields = Array.from(document.querySelectorAll("#playerForm input"))
 
     // Initialise error counter
-    var errorCounter = 0
+    let errorCounter = 0
 
     // Validate each input field. Update the error counter accordingly.
     inputFields.forEach(inputElement => {
-        var hasError = initiateValidation(inputElement)
-        if (hasError) { errorCounter++ }
+        let hasError = initiateValidation(inputElement)
+        if (hasError) errorCounter++ 
     })
 
     // Submit form if no errors found
@@ -128,16 +128,15 @@ function checkFormValidity(form) {
 
 function playGame(urlObject) {
     
-    var trophyIconHTML = '<i class="fa fa-trophy" aria-hidden="true"></i>';
-    var resultString;
-    var roll1 = Math.ceil(Math.random() * 6)
-    var roll2 = Math.ceil(Math.random() * 6)
+    const trophyIconHTML = '<i class="fa fa-trophy" aria-hidden="true"></i>';
+    const rawPlayerArray = urlObject.getAll("player");
+    let resultString;
+    let roll1 = Math.ceil(Math.random() * 6);
+    let roll2 = Math.ceil(Math.random() * 6);
 
-    var rawPlayerArray = urlObject.getAll("player")
+    let players = rawPlayerArray.map(player => {
 
-    var players = rawPlayerArray.map(player => {
-
-        var formattedPlayerName = player.charAt(0).toUpperCase().concat(player.slice(1))
+        let formattedPlayerName = player.charAt(0).toUpperCase().concat(player.slice(1))
         return formattedPlayerName
     })
 
