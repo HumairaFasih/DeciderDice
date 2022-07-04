@@ -14,7 +14,6 @@ window.onload = () => {
         }, true)
 
         // Submit form after validation of input
-        // var form = $("form[name=playerForm]")
         $("form[name=playerForm]").on("submit", function (event) {
             event.preventDefault()
             var isValid = checkFormValidity()
@@ -119,7 +118,6 @@ function checkFormValidity(form) {
 
     // Submit form if no errors found
     if (errorCounter == 0) {
-        // form.submit()
         return true
     }
 
